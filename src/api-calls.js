@@ -11,13 +11,13 @@ const fetchAllTripData = () => {
 }
 
 const fetchAllDestinationData = () => {
-  return fetch('http://localhost:3001/api/v1/destinations	')
+  return fetch('http://localhost:3001/api/v1/destinations')
     .then((response) => response.json())
     .catch((error) => console.log(error))
 }
 
 const fetchOneTravelersData = () => {
-  return fetch('http://localhost:3001/api/v1/travelers/<id>')
+  return fetch('http://localhost:3001/api/v1/travelers/')
     .then((response) => response.json())
     .catch((error) => console.log(error))
 }

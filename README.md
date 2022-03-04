@@ -4,6 +4,8 @@
 
 - Trunk Icon by [FreePik](https://www.flaticon.com/free-icons/travel)
 
+- Background Photo by [Erwan Hesry](https://unsplash.com/@erwanhesry?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText")
+
 ## Clone This Repo
 
 That's right, _clone_ not fork. You will use this repo multiple times, but you can only fork a repository once. So here is what you need to do to clone the repo and still be able to push changes to your repo:

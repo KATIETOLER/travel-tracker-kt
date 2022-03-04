@@ -7,10 +7,17 @@
   <title>Travel Tracker</title>
 </head>
 <body>
- <nav class="welcome-nav"> <div class="t">T</div>ravel <img src="./images/luggage.png" alt="luggage"> <div class="t">T</div>racker</nav> 
-  
-  <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
+  <nav class="welcome-nav"> <div class="icon-wrapper"><img src="./images/luggage.png" alt="luggage"> </div> 
+    <div class="title-wrapper">
+      <div class="travel">Travel</div> <div class="tracker">Tracker
+    </div></nav> 
+    <main>
+      <button>Log In</button>  
+      <button>Destinations</button>
+      <input type="number"> 
+        <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
+        <input type="date">
+    </main>
   <script src="bundle.js"></script>
-
 </body>
 </html>
