@@ -7,16 +7,34 @@
   <title>Travel Tracker</title>
 </head>
 <body>
-  <nav class="welcome-nav"> <div class="icon-wrapper"><img src="./images/luggage.png" alt="luggage"> </div> 
+  <nav class="welcome-nav"> <button>Log In</button><div class="icon-wrapper"><img src="./images/luggage.png" alt="luggage"> </div> 
     <div class="title-wrapper">
       <div class="travel">Travel</div> <div class="tracker">Tracker
     </div></nav> 
     <main>
-      <button>Log In</button>  
-      <button>Destinations</button>
-      <input type="number"> 
-        <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
-        <input type="date">
+      <div class="dashboard"> 
+
+      </div>
+      <div class="card-wrapper hidden">
+        <div class="card-1 cards">
+          <label for="date-selector">Select A Date:</label>
+          <input type="date" name="date-selector" id="date-selector">
+        </div>
+        <div class="card-2 cards">
+          <label for="destination-dropdown">Choose a destination:</label><select name="destination-dropdown" id="destination-dropdown">
+          <option value="Spain">Spain</option>
+          <option value="France">France</option>
+          <option value="Italy">Italy</option>
+          <option value="Peru">Peru</option>
+          </select>
+        </div>
+        <div class="card-3 cards"> 
+          <label for="trips">Choose a number of trips:</label>
+          <input type="number" name="trips" id="trips"> 
+      </div>
+      
+          <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
+
     </main>
   <script src="bundle.js"></script>
 </body>

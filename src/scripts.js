@@ -3,7 +3,7 @@
 
 // An example of how you tell webpack to use a CSS (SCSS) file
 import './css/styles.css'
-import './traveler'
+import './Traveler'
 import './api-calls'
 import {
   fetchAllTravelerData,
@@ -11,11 +11,14 @@ import {
   fetchAllDestinationData,
   fetchOneTravelersData,
 } from './api-calls'
+import { displayDashboard } from './domUpdates'
 
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
 import './images/luggage.png'
 import './images/sean-sinclair--unsplash.jpg'
+import Traveler from './Traveler'
+
+let currentTraveler
 
 const fetchAllData = () => {
   Promise.all([
@@ -23,14 +26,21 @@ const fetchAllData = () => {
     fetchAllTripData(),
     fetchAllDestinationData(),
     fetchOneTravelersData(),
-  ]).then((allData) => parseAllData(allData))
+  ]).then((allData) => {
+    currentTraveler = new Traveler(
+      allData[0].travelers[0],
+      allData[1].trips,
+      allData[2].destinations
+    )
+    currentTraveler.getTravelerTripData(
+      allData[1].trips,
+      allData[2].destinations
+    )
+    console.log(currentTraveler.travelerTrips)
+    displayDashboard(currentTraveler)
+  })
 }
 
 window.addEventListener('load', fetchAllData)
 
-//query selectors
-// create tests for the traveller
-// buttons and forms
-// I should see a dashboard page that shows me:
-// All of my trips (past, present, upcoming and pending)
-// Total amount I have spent on trips this year. This should be calculated from the trips data and include a travel agent’s 10% fee
+export { currentTraveler }
