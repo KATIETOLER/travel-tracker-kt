@@ -19,7 +19,6 @@ body {
   background-image: url(../images/sean-sinclair--unsplash.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
   position: relative;
 }
 
@@ -112,19 +111,26 @@ img {
 
 .cards {
   display: flex;
-  height: 50vw;
-  width: 25vw;
+  height: 35vw;
+  width: 20vw;
   border: 2vw solid rgb(85, 0, 255);
   background-color: blueviolet;
   color: aliceblue;
   border-radius: 0.5vw;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  padding: 1vw;
 }
 
 .dashboard {
   height: 30vw;
   width: 50vw;
   background-color: aliceblue;
+  padding: 2vw;
+}
+
+#submitButton {
+  height: 2vw;
+  width: 4vw;
 }

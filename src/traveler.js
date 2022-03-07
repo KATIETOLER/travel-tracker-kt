@@ -10,6 +10,13 @@ class Traveler {
     this.allDestinationsData = allDestinationsData
     this.travelerTrips = []
     this.totalSpent = 0
+    this.destinationOptions = []
+  }
+
+  getAllDestinations(allDestinationsData) {
+    allDestinationsData.forEach((destination) => {
+      this.destinationOptions.push(destination.destination)
+    })
   }
 
   getTravelerTripData(allTripsData, destinationsData) {
@@ -44,9 +51,6 @@ class Traveler {
   // }
 
   calculateTripCost(trip, destination) {
-    console.log('dstn', destination)
-    console.log('flights', destination.estimatedFlightCostPerPerson)
-
     const tripTotal =
       destination.estimatedLodgingCostPerDay * trip.duration +
       destination.estimatedFlightCostPerPerson * trip.travelers

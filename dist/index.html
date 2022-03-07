@@ -16,22 +16,21 @@
         <div class="total"></div>
         <div class="trips"></div>
       </div>
-      <div class="card-wrapper hidden">
-        <div class="card-1 cards">
+
+      <div class="form-wrapper hidden">
+        <form class="cards">
           <label for="date-selector">Select A Date:</label>
-          <input type="date" name="date-selector" id="date-selector">
-        </div>
-        <div class="card-2 cards">
-          <label for="destination-dropdown">Choose a destination:</label><select name="destination-dropdown" id="destination-dropdown">
+          <input type="date" name="date-selector" id="date-selector" required>
+          <label for="duration">Duration of trip:</label>
+          <input type="number" name="duration" id="duration" required> 
+          <label for="destination-dropdown">Choose a destination:</label>
+          <select name="destination-dropdown" id="destination-dropdown" required>
           <option value="Spain">Spain</option>
-          <option value="France">France</option>
-          <option value="Italy">Italy</option>
-          <option value="Peru">Peru</option>
           </select>
-        </div>
-        <div class="card-3 cards"> 
-          <label for="trips">Choose a number of trips:</label>
-          <input type="number" name="trips" id="trips"> 
+          <label for="trips">Choose a number of travelers:</label>
+          <input type="number" name="trips" id="trips" required> 
+        <button id="submitButton">Submit</button>
+        </form>
       </div>
       
           <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->

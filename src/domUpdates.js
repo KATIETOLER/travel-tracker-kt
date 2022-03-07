@@ -3,6 +3,7 @@ import { currentTraveler } from './scripts'
 const dashboard = document.querySelector('.dashboard')
 const userTrips = document.querySelector('.trips')
 const userTotal = document.querySelector('.total')
+const destinationOptions = document.querySelector('#destination-dropdown')
 
 const hide = (toHide) => {
   toHide.forEach((element) => {
@@ -23,8 +24,18 @@ const showHide = (toShow, toHide) => {
 
 /// dom updates object
 
+const displayDestinationOptions = (currentTraveler) => {
+  destinationOptions.innerHTML = currentTraveler.destinationOptions.reduce(
+    (acc, destination) => {
+      acc += `<option value="${destination}">${destination}</option>
+      `
+      return acc
+    },
+    ''
+  )
+}
+
 const displayDashboard = (currentTraveler) => {
-  console.log(currentTraveler)
   userTrips.innerHTML = currentTraveler.travelerTrips.reduce((acc, trip) => {
     acc += `<div class="trips">
           <h3>Reservation for: ${trip.date}</h3><br>
@@ -39,8 +50,7 @@ const displayDashboard = (currentTraveler) => {
 }
 
 const displayTotal = (currentTraveler) => {
-  console.log('totalllll', currentTraveler.totalSpent)
   userTotal.innerHTML = `Total Spent on trips: $${currentTraveler.totalSpent}`
 }
 
-export { displayDashboard, displayTotal }
+export { displayDashboard, displayTotal, displayDestinationOptions }
