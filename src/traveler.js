@@ -9,6 +9,7 @@ class Traveler {
     this.allTripsData = allTripsData
     this.allDestinationsData = allDestinationsData
     this.travelerTrips = []
+    this.totalSpent = 0
   }
 
   getTravelerTripData(allTripsData, destinationsData) {
@@ -51,6 +52,14 @@ class Traveler {
       destination.estimatedFlightCostPerPerson * trip.travelers
     const fee = tripTotal / 0.1
     return fee + tripTotal
+  }
+
+  calculateAllTripTotal() {
+    const total = this.travelerTrips.reduce((acc, trip) => {
+      acc += trip.total
+      return acc
+    }, 0)
+    this.totalSpent = total
   }
 }
 

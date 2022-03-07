@@ -11,7 +11,7 @@ import {
   fetchAllDestinationData,
   fetchOneTravelersData,
 } from './api-calls'
-import { displayDashboard } from './domUpdates'
+import { displayDashboard, displayTotal } from './domUpdates'
 
 import './images/turing-logo.png'
 import './images/luggage.png'
@@ -36,8 +36,9 @@ const fetchAllData = () => {
       allData[1].trips,
       allData[2].destinations
     )
-    console.log(currentTraveler.travelerTrips)
+    currentTraveler.calculateAllTripTotal()
     displayDashboard(currentTraveler)
+    displayTotal(currentTraveler)
   })
 }
 
