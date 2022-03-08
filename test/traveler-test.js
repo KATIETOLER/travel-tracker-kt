@@ -43,11 +43,11 @@ describe('Traveler', () => {
   })
 
   it('should have a property to hold all the trip data', () => {
-    expect(traveler.allTripsData.length).to.deep.equal(3)
+    expect(traveler.allTripsData.length).to.equal(3)
   })
 
   it('should have a property to hold all the destination data', () => {
-    expect(traveler.allDestinationsData.length).to.deep.equal(3)
+    expect(traveler.allDestinationsData.length).to.equal(3)
   })
 
   it('should start with no trip information', () => {
@@ -80,3 +80,5 @@ describe('Traveler', () => {
     expect(traveler.totalSpent).to.equal(139370)
   })
 })
+
+//login, tests, readme, refactor

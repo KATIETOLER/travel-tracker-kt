@@ -9,6 +9,9 @@ const newTripButton = document.querySelector('.new-trip')
 const yourAccountButton = document.querySelector('.your-account')
 const formWrapper = document.querySelector('.form-wrapper')
 const greeting = document.querySelector('.greeting')
+const modal = document.querySelector('.modal')
+const modalText = document.querySelector('.modal-content')
+const closeModal = document.querySelector('.close')
 
 const hide = (toHide) => {
   toHide.forEach((element) => {
@@ -74,6 +77,21 @@ const displayAccount = () => {
   showHide([dashboard, newTripButton], [formWrapper, yourAccountButton])
 }
 
+const displayModal = (message) => {
+  modalText.innerText = `${message}`
+  show([modal])
+}
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    hide([modal])
+  }
+}
+
+closeModal.addEventListener('click', (event) => {
+  hide([modal])
+})
+
 newTripButton.addEventListener('click', displayNewTripForm)
 
 yourAccountButton.addEventListener('click', displayAccount)
@@ -83,4 +101,5 @@ export {
   displayTotal,
   displayDestinationOptions,
   displayTripSubmission,
+  displayModal,
 }

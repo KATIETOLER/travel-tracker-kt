@@ -17,6 +17,7 @@ import {
   displayDashboard,
   displayTotal,
   displayDestinationOptions,
+  displayModal,
 } from './domUpdates'
 
 import './images/turing-logo.png'
@@ -57,7 +58,7 @@ const fetchAllData = () => {
       currentTraveler.getAllDestinations(allData[2].destinations)
       displayDestinationOptions(currentTraveler)
     })
-    .catch((error) => console.log(error))
+    .catch((error) => displayModal(error))
 }
 
 const submitNewTrip = (event) => {
@@ -73,7 +74,6 @@ const submitNewTrip = (event) => {
     status: 'pending',
     suggestedActivities: [],
   }
-  console.log(newTrip)
   postNewTripData(newTrip)
     .then((data) => {
       fetchAllData()
@@ -86,5 +86,11 @@ window.addEventListener('load', fetchAllData)
 submitButton.addEventListener('click', (event) => {
   submitNewTrip(event)
 })
+
+// error handling
+// inputs
+// successfull post
+// unsuc post
+// fetch/get issue
 
 export { currentTraveler }
