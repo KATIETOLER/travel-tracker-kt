@@ -12,7 +12,8 @@ const greeting = document.querySelector('.greeting')
 const modal = document.querySelector('.modal')
 const modalText = document.querySelector('.modal-content')
 const closeModal = document.querySelector('.close')
-
+const logoutButton = document.querySelector('.log-out-button')
+const loginDisplay = document.querySelector('.login-display')
 const hide = (toHide) => {
   toHide.forEach((element) => {
     element.classList.add('hidden')
@@ -71,10 +72,22 @@ const displayTotal = (currentTraveler) => {
   userTotal.innerHTML = `Total Spent on trips: $${currentTraveler.totalSpent}`
 }
 const displayNewTripForm = () => {
-  showHide([formWrapper, yourAccountButton], [newTripButton, dashboard])
+  showHide(
+    [formWrapper, yourAccountButton],
+    [newTripButton, loginDisplay, dashboard]
+  )
 }
 const displayAccount = () => {
-  showHide([dashboard, newTripButton], [formWrapper, yourAccountButton])
+  showHide(
+    [dashboard, newTripButton, logoutButton],
+    [formWrapper, loginDisplay, yourAccountButton]
+  )
+}
+const logout = () => {
+  showHide(
+    [loginDisplay],
+    [dashboard, formWrapper, logoutButton, newTripButton, yourAccountButton]
+  )
 }
 
 const displayModal = (message) => {
@@ -93,7 +106,7 @@ closeModal.addEventListener('click', (event) => {
 })
 
 newTripButton.addEventListener('click', displayNewTripForm)
-
+logoutButton.addEventListener('click', logout)
 yourAccountButton.addEventListener('click', displayAccount)
 
 export {
@@ -102,4 +115,5 @@ export {
   displayDestinationOptions,
   displayTripSubmission,
   displayModal,
+  displayAccount,
 }

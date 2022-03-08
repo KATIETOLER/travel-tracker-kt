@@ -16,6 +16,7 @@ import {
   displayTripSubmission,
   displayDashboard,
   displayTotal,
+  displayAccount,
   displayDestinationOptions,
   displayModal,
 } from './domUpdates'
@@ -32,19 +33,22 @@ const selectedDuration = document.querySelector('#duration')
 const selectedDestination = document.querySelector('#destination-dropdown')
 const selectedTravelerNumber = document.querySelector('#traveler-number')
 const submitButton = document.querySelector('#submitButton')
+const userNameInput = document.querySelector('#userNameInput')
+const passwordInput = document.querySelector('#passwordInput')
+const submitLoginBtn = document.querySelector('#loginButton')
 
 let currentTraveler
-
-const fetchAllData = () => {
+let travelerID
+const fetchAllData = (id) => {
   Promise.all([
     fetchAllTravelerData(),
     fetchAllTripData(),
     fetchAllDestinationData(),
-    fetchOneTravelersData(),
+    fetchOneTravelersData(id),
   ])
     .then((allData) => {
       currentTraveler = new Traveler(
-        allData[0].travelers[0],
+        allData[3],
         allData[1].trips,
         allData[2].destinations
       )
@@ -66,7 +70,7 @@ const submitNewTrip = (event) => {
 
   const newTrip = {
     id: Date.now(),
-    userID: currentTraveler.id,
+    userID: travelerID,
     destinationID: parseInt(selectedDestination.value),
     travelers: parseInt(selectedTravelerNumber.value),
     date: selectedDate.value.replaceAll('-', '/'),
@@ -76,21 +80,31 @@ const submitNewTrip = (event) => {
   }
   postNewTripData(newTrip)
     .then((data) => {
-      fetchAllData()
+      fetchAllData(travelerID)
       displayTripSubmission(data.message)
     })
     .catch((error) => displayTripSubmission(error))
 }
 
-window.addEventListener('load', fetchAllData)
+const setUserId = () => {
+  travelerID = parseInt(userNameInput.value.substring(8))
+}
+
+const login = (event) => {
+  event.preventDefault()
+  setUserId()
+  if (travelerID < 50 && 0 < travelerID && passwordInput.value === 'travel') {
+    fetchAllData(travelerID)
+    return displayAccount()
+  } else {
+    displayModal('Sorry, wrong id or password try again!')
+  }
+}
+
 submitButton.addEventListener('click', (event) => {
   submitNewTrip(event)
 })
 
-// error handling
-// inputs
-// successfull post
-// unsuc post
-// fetch/get issue
+submitLoginBtn.addEventListener('click', login)
 
 export { currentTraveler }
