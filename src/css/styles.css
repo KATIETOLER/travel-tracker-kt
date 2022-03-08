@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  font-family: 'Biryani', sans-serif;
+  background-color: rgb(202, 222, 255);
+  height: 100%;
+  background-image: url(../images/sean-sinclair--unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  height: 5vw;
+  width: 8vw;
+  font-size: medium;
+  border-radius: 1vw;
+  background-color: rgb(246 12 246 / 80%);
+  color: white;
+  border: solid #3a11ff;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+main {
+  display: flex;
+  height: 100%;
+  opacity: 100%;
+  padding-left: 5%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.welcome-nav {
+  display: flex;
+  width: 100%;
+  height: 10vw;
+  flex-direction: row;
+  font-size: 2vw;
+  align-items: center;
+  padding: 2vw;
+  justify-content: space-between;
+  box-shadow: 2px 6px 6px hsl(0deg 0% 0% / 0.1);
+  background-color: rgb(0, 0, 0);
+}
+
+img {
+  padding: 0.5vw;
+  height: 8vw;
+}
+
+.t {
+  font-size: 3vw;
+}
+
+.title-wrapper {
+  font-family: 'Londrina Outline', sans-serif;
+  font-size: 5vw;
+  color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  text-shadow: 2px 6px 6px rgba(213, 213, 213, 0.1);
+  align-items: center;
+}
+
+.cards {
+  display: flex;
+  height: 35vw;
+  width: 20vw;
+  border: 2vw solid rgb(85, 0, 255);
+  background-color: blueviolet;
+  color: aliceblue;
+  border-radius: 0.5vw;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw;
+}
+
+.dashboard {
+  height: 30vw;
+  width: 50vw;
+  background-color: aliceblue;
+  padding: 2vw;
+  overflow-y: scroll;
+}
+
+#submitButton {
+  height: 2vw;
+  width: 4vw;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
