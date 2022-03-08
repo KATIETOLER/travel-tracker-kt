@@ -67,4 +67,4 @@ let testDestinationData = [
   },
 ]
 
-export { testTravelerData, testDestinationData, testTravelerData }
+export { testTravelerData, testDestinationData, testTripData }

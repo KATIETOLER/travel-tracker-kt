@@ -1,46 +1,17 @@
 import chai from 'chai'
 const expect = chai.expect
 import Trip from '../src/Trip'
-import '../test/sample-data'
+import {
+  testTravelerData,
+  testDestinationData,
+  testTripData,
+} from './sample-data'
 
 describe('Trip', () => {
   let trip
-  let testTripData
 
   beforeEach(() => {
-    testTripData = [
-      {
-        id: 1,
-        userID: 44,
-        destinationID: 49,
-        travelers: 1,
-        date: '2022/09/16',
-        duration: 8,
-        status: 'approved',
-        suggestedActivities: [],
-      },
-      {
-        id: 1,
-        userID: 35,
-        destinationID: 25,
-        travelers: 5,
-        date: '2022/10/04',
-        duration: 18,
-        status: 'approved',
-        suggestedActivities: [],
-      },
-      {
-        id: 1,
-        userID: 3,
-        destinationID: 22,
-        travelers: 4,
-        date: '2022/05/22',
-        duration: 17,
-        status: 'approved',
-        suggestedActivities: [],
-      },
-    ]
-    trip = new Trip(testTripData)
+    trip = new Trip(testTripData[0], testDestinationData[0])
   })
 
   // TESTS
@@ -53,7 +24,39 @@ describe('Trip', () => {
     expect(trip).to.be.an.instanceof(Trip)
   })
 
-  it('should hold all of the travelers trip data', () => {
-    expect(trip.tripData).to.deep.equal(testTripData)
+  it('should have a user id', () => {
+    expect(trip.userID).to.equal(1)
+  })
+
+  it('should have a duration', () => {
+    expect(trip.duration).to.equal(8)
+  })
+
+  it('should have a status', () => {
+    expect(trip.status).to.equal('approved')
+  })
+
+  it('should have a destination id', () => {
+    expect(trip.destinationID).to.equal(1)
+  })
+
+  it('should show the number of travelers', () => {
+    expect(trip.travelers).to.equal(1)
+  })
+
+  it('should start with no suggested activities', () => {
+    expect(trip.suggestedActivities).to.deep.equal([])
+  })
+
+  it("should have a method to get the trip's destination", () => {
+    expect(trip.getTripDestination(testDestinationData)).to.deep.equal({
+      id: 1,
+      destination: 'Lima, Peru',
+      estimatedLodgingCostPerDay: 70,
+      estimatedFlightCostPerPerson: 400,
+      image:
+        'https://images.unsplash.com/photo-1489171084589-9b5031ebcf9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80',
+      alt: 'overview of city buildings with a clear sky',
+    })
   })
 })
