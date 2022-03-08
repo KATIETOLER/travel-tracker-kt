@@ -1,5 +1,3 @@
-import Traveler from '../src/Traveler'
-
 let testTravelerData = {
   id: 1,
   name: 'Ham Leadbeater',
@@ -68,3 +66,5 @@ let testDestinationData = [
     alt: 'opera house and city buildings on the water with boats',
   },
 ]
+
+export { testTravelerData, testDestinationData, testTravelerData }

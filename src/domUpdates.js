@@ -4,6 +4,11 @@ const dashboard = document.querySelector('.dashboard')
 const userTrips = document.querySelector('.trips')
 const userTotal = document.querySelector('.total')
 const destinationOptions = document.querySelector('#destination-dropdown')
+const status = document.querySelector('.submission-status')
+const newTripButton = document.querySelector('.new-trip')
+const yourAccountButton = document.querySelector('.your-account')
+const formWrapper = document.querySelector('.form-wrapper')
+const greeting = document.querySelector('.greeting')
 
 const hide = (toHide) => {
   toHide.forEach((element) => {
@@ -27,7 +32,7 @@ const showHide = (toShow, toHide) => {
 const displayDestinationOptions = (currentTraveler) => {
   destinationOptions.innerHTML = currentTraveler.destinationOptions.reduce(
     (acc, destination) => {
-      acc += `<option value="${destination}">${destination}</option>
+      acc += `<option value="${destination.id}">${destination.destination}</option>
       `
       return acc
     },
@@ -47,10 +52,35 @@ const displayDashboard = (currentTraveler) => {
         </div>`
     return acc
   }, '')
+  displayWelcomeMessage(currentTraveler)
+}
+
+const displayWelcomeMessage = (currentTraveler) => {
+  greeting.innerHTML = `Welcome, ${currentTraveler.name}`
+}
+
+const displayTripSubmission = (message) => {
+  show([status])
+  status.innerText = `${message}`
 }
 
 const displayTotal = (currentTraveler) => {
   userTotal.innerHTML = `Total Spent on trips: $${currentTraveler.totalSpent}`
 }
+const displayNewTripForm = () => {
+  showHide([formWrapper, yourAccountButton], [newTripButton, dashboard])
+}
+const displayAccount = () => {
+  showHide([dashboard, newTripButton], [formWrapper, yourAccountButton])
+}
 
-export { displayDashboard, displayTotal, displayDestinationOptions }
+newTripButton.addEventListener('click', displayNewTripForm)
+
+yourAccountButton.addEventListener('click', displayAccount)
+
+export {
+  displayDashboard,
+  displayTotal,
+  displayDestinationOptions,
+  displayTripSubmission,
+}

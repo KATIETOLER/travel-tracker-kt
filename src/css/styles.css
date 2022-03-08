@@ -46,6 +46,7 @@ select {
 button {
   height: 5vw;
   width: 8vw;
+  font-size: medium;
   border-radius: 1vw;
   background-color: rgb(246 12 246 / 80%);
   color: white;
@@ -128,9 +129,14 @@ img {
   width: 50vw;
   background-color: aliceblue;
   padding: 2vw;
+  overflow-y: scroll;
 }
 
 #submitButton {
   height: 2vw;
   width: 4vw;
+}
+
+.hidden {
+  display: none;
 }
