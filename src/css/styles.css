@@ -17,14 +17,29 @@ body {
   background-color: rgb(202, 222, 255);
   height: 100%;
   background-image: url(../images/sean-sinclair--unsplash.jpg);
+  background-color: rgb(121, 0, 196);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  overflow: hidden;
 }
 
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+body::-webkit-scrollbar {
+  width: 2em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(181, 0, 157);
+  outline: 1px solid slategrey;
 }
 
 img,
@@ -51,6 +66,11 @@ button {
   background-color: rgb(246 12 246 / 80%);
   color: white;
   border: solid #3a11ff;
+}
+
+button:hover {
+  background-color: rgba(255, 141, 255, 0.8);
+  transition: 200ms;
 }
 
 p,
@@ -110,12 +130,19 @@ img {
   align-items: center;
 }
 
+.button-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  width: 20vw;
+}
+
 .cards {
   display: flex;
-  height: 35vw;
-  width: 20vw;
+  height: 30vw;
+  width: 35vw;
   border: 2vw solid rgb(85, 0, 255);
-  background-color: blueviolet;
+  background-color: rgb(85, 0, 255);
+  box-shadow: 1px 1px 100px rgb(250, 254, 0), 1px 1px 100px rgb(232, 206, 8);
   color: aliceblue;
   border-radius: 0.5vw;
   flex-direction: column;
@@ -125,16 +152,48 @@ img {
 }
 
 .dashboard {
+  display: flex;
   height: 30vw;
   width: 50vw;
-  background-color: aliceblue;
+  color: aliceblue;
+  border: 2vw solid rgb(106, 0, 254);
+  border-radius: 2vw;
+  background-color: rgb(106, 0, 254);
   padding: 2vw;
   overflow-y: scroll;
+  box-shadow: 1px 1px 100px rgb(250, 254, 0), 1px 1px 100px rgb(232, 206, 8);
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard::-webkit-scrollbar {
+  width: 2em;
+}
+
+.dashboard::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard::-webkit-scrollbar-thumb {
+  background-color: rgb(252, 252, 252);
+  outline: 1px solid slategrey;
+}
+
+.total {
+  font-weight: bolder;
+  font-style: italic;
+  padding: 2vw;
+}
+
+.greeting {
+  color: rgb(255 251 2);
+  text-shadow: 2px 6px 6px rgba(0, 0, 0, 0.1);
+  font-size: 3vw;
 }
 
 #submitButton {
-  height: 2vw;
-  width: 4vw;
+  height: 4vw;
+  width: 6vw;
 }
 
 .modal {
@@ -158,12 +217,28 @@ img {
   width: 80%;
 }
 
+.icon {
+  height: 6vw;
+}
+
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  color: #e601db;
   float: right;
   font-size: 28px;
   font-weight: bold;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-display {
+  display: flex;
+  flex-direction: column;
 }
 
 .close:hover,

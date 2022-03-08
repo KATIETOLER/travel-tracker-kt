@@ -93,11 +93,11 @@ const setUserId = () => {
 const login = (event) => {
   event.preventDefault()
   setUserId()
-  if (travelerID < 50 && 0 < travelerID && passwordInput.value === 'travel') {
+  if (travelerID <= 50 && 0 < travelerID && passwordInput.value === 'travel') {
     fetchAllData(travelerID)
     return displayAccount()
   } else {
-    displayModal('Sorry, wrong id or password try again!')
+    displayModal('Sorry, wrong id or password, try again!')
   }
 }
 

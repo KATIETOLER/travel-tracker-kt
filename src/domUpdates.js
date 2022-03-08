@@ -14,6 +14,13 @@ const modalText = document.querySelector('.modal-content')
 const closeModal = document.querySelector('.close')
 const logoutButton = document.querySelector('.log-out-button')
 const loginDisplay = document.querySelector('.login-display')
+const estCostBtn = document.querySelector('.estimated-cost')
+const estCostDisplay = document.querySelector('.display-est-cost')
+
+const selectedDuration = document.querySelector('#duration')
+const selectedDestination = document.querySelector('#destination-dropdown')
+const selectedTravelerNumber = document.querySelector('#traveler-number')
+
 const hide = (toHide) => {
   toHide.forEach((element) => {
     element.classList.add('hidden')
@@ -60,7 +67,7 @@ const displayDashboard = (currentTraveler) => {
 }
 
 const displayWelcomeMessage = (currentTraveler) => {
-  greeting.innerHTML = `Welcome, ${currentTraveler.name}`
+  greeting.innerHTML = `Welcome, ${currentTraveler.name}!`
 }
 
 const displayTripSubmission = (message) => {
@@ -69,7 +76,7 @@ const displayTripSubmission = (message) => {
 }
 
 const displayTotal = (currentTraveler) => {
-  userTotal.innerHTML = `Total Spent on trips: $${currentTraveler.totalSpent}`
+  userTotal.innerHTML = `Total Spent on Trips this Year: $${currentTraveler.totalSpent}`
 }
 const displayNewTripForm = () => {
   showHide(
@@ -101,8 +108,29 @@ window.onclick = function (event) {
   }
 }
 
+const displayEstimate = (event) => {
+  event.preventDefault()
+
+  const currentSelectedTrip = {
+    travelers: parseInt(selectedTravelerNumber.value),
+    duration: parseInt(selectedDuration.value),
+  }
+
+  const destinationData = currentTraveler.getDestinationById(
+    parseInt(selectedDestination.value)
+  )
+  estCostDisplay.innerHTML = `Estimated Cost: $ ${currentTraveler.calculateTripCost(
+    currentSelectedTrip,
+    destinationData
+  )}`
+}
+
 closeModal.addEventListener('click', (event) => {
   hide([modal])
+})
+
+estCostBtn.addEventListener('click', (event) => {
+  displayEstimate(event)
 })
 
 newTripButton.addEventListener('click', displayNewTripForm)
@@ -110,6 +138,7 @@ logoutButton.addEventListener('click', logout)
 yourAccountButton.addEventListener('click', displayAccount)
 
 export {
+  displayEstimate,
   displayDashboard,
   displayTotal,
   displayDestinationOptions,
