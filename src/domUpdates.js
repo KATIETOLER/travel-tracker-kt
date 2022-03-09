@@ -70,7 +70,15 @@ const displayWelcomeMessage = (currentTraveler) => {
 
 const displayTripSubmission = (message) => {
   show([status])
-  status.innerText = `${message}`
+  if (
+    selectedDestination.value !== '' &&
+    selectedDuration.value !== '' &&
+    selectedTravelerNumber !== ''
+  ) {
+    status.innerText = `${message}`
+  } else {
+    displayModal(`Please fill out all fields`)
+  }
 }
 
 const displayTotal = (currentTraveler) => {
@@ -118,10 +126,18 @@ const displayEstimate = (event) => {
   const destinationData = currentTraveler.getDestinationById(
     parseInt(selectedDestination.value)
   )
-  estCostDisplay.innerHTML = `Estimated Cost: $ ${currentTraveler.calculateTripCost(
-    currentSelectedTrip,
-    destinationData
-  )}`
+  if (
+    selectedDestination.value !== '' &&
+    selectedDuration.value !== '' &&
+    selectedTravelerNumber.value !== ''
+  ) {
+    estCostDisplay.innerHTML = `Estimated Cost: $ ${currentTraveler.calculateTripCost(
+      currentSelectedTrip,
+      destinationData
+    )}`
+  } else {
+    displayModal(`Please fill out all fields`)
+  }
 }
 
 closeModal.addEventListener('click', (event) => {

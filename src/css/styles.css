@@ -21,15 +21,14 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  overflow: hidden;
 }
 
 label {
-  font-size: 2em;
+  font-size: 1em;
 }
 
 input {
-  font-size: 2em;
+  font-size: 1em;
 }
 
 body {
@@ -235,6 +234,11 @@ img {
   float: right;
   font-size: 28px;
   font-weight: bold;
+}
+
+.status {
+  font-style: italic;
+  color: yellow;
 }
 
 .login-form {
