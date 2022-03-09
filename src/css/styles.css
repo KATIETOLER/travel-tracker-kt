@@ -149,8 +149,8 @@ img {
   display: flex;
   height: 48vw;
   width: 35vw;
-  border: 2vw solid rgb(85, 0, 255);
-  background-color: rgb(85, 0, 255);
+  border: 2vw solid rgb(53, 0, 160);
+  background-color: rgb(48, 0, 145);
   box-shadow: 1px 1px 100px rgb(250 254 0), 1px 1px 100px rgb(232 206 8);
   color: aliceblue;
   border-radius: 0.5vw;
