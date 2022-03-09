@@ -22,12 +22,26 @@ Travel Tracker was created to manage and track different trips for users and a t
 ## Site Samples
 
 Log in to see your personal dashboard:
+
+
 ![Log in to see your personal dashboard](https://media1.giphy.com/media/BCHp7QrS9hszzQEEkI/giphy.gif)
+
+
 Scroll through all trips:
+
+
 ![Scroll through all trips](https://media3.giphy.com/media/hNKKMmvKZiph4WEvXQ/giphy.gif)
+
+
 Estimate the cost of a trip:
+
+
 ![Estimate the cost of a trip](https://media4.giphy.com/media/kF7BmLOD2rzWRsxfyC/giphy.gif)
+
+
 Request a new trip:
+
+
 ![Request a new trip](https://media1.giphy.com/media/mmcL0gy4ydm4jmgWUf/giphy.gif)
 
 ## How to view the site
