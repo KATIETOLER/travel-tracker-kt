@@ -1,111 +1,62 @@
 # Travel Tracker
 
+- Created by Katie Toler | [Follow me on Github](https://github.com/KATIETOLER)
+
+- Project Manager [Nik Seif](https://github.com/niksseif)
+
+## Overview
+
+This app is built using JavaScript, HTML, CSS, and utilizes Test Driven Development with Mocha and Chai.
+
+Travel Tracker was created to manage and track different trips for users and a travel agency. It utilizes a local api to host and post information about a traveler, potential trips and potential destinations.
+
+## Languages & Dependencies
+
+- Javascript
+- HTML
+- CSS
+- Webpack
+
+## Site Samples
+
+Log in to see your personal dashboard:
+![Log in to see your personal dashboard](https://media1.giphy.com/media/BCHp7QrS9hszzQEEkI/giphy.gif)
+Scroll through all trips:
+![Scroll through all trips](https://media3.giphy.com/media/hNKKMmvKZiph4WEvXQ/giphy.gif)
+Estimate the cost of a trip:
+![Estimate the cost of a trip](https://media4.giphy.com/media/kF7BmLOD2rzWRsxfyC/giphy.gif)
+Request a new trip:
+![Request a new trip](https://media1.giphy.com/media/mmcL0gy4ydm4jmgWUf/giphy.gif)
+
+## How to view the site
+
+- The easiest way is to view the deployed site [here](https://katietoler.github.io/travel-tracker-kt/)
+
+- Or, you can `clone` [this](https://github.com/KATIETOLER/travel-tracker-kt) repository and the [api](https://github.com/turingschool-examples/travel-tracker-api)
+  - follow the instructions on the api README
+  - run `npm install` and `npm start` in both repositories
+  - open the site at [http://localhost:8080](http://localhost:8080/?user-name=traveler1&psw=travel)
+
+## Future Additions
+
+Future additions to this project may include two different types of users, a traveler or a travel agent.
+
+As a travel agent, upon logging in:
+
+The agent should see a dashboard page that shows:
+New trip requests (a user’s “pending” trips)
+Total income generated this year (should be 10% of user trip cost)
+Travelers on trips for today’s date (number, names, however you want to display this!)
+As a travel agent:
+
+The agent should be able to see and approve / deny trip requests
+The agent should be able to search for any user by name and:
+View their name, a list of all of their trips, and the total amount they’ve spent (including 10% agent cut)
+Approve a trip request for that user
+Delete an upcoming trip for that user
+
 ## Attributions
 
 - Trunk Icon by [FreePik](https://www.flaticon.com/free-icons/travel)
 
 - Background Photo by [Erwan Hesry](https://unsplash.com/@erwanhesry?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText")
-
-## Clone This Repo
-
-That's right, _clone_ not fork. You will use this repo multiple times, but you can only fork a repository once. So here is what you need to do to clone the repo and still be able to push changes to your repo:
-
-1. Clone down this repo. Since you don't want to name your project "webpack-starter-kit", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Remove the default remote: `git remote rm origin` (notice that `git remote -v` not gives you back nothing)
-1. Create a new repo on GitHub with the name of `[what you want to name the repo]` to be consistent with naming
-1. Copy the address that you would use to clone down this repo - something like `git@github.com:...`
-1. Add this remote to your cloned down repo: `git remote add origin [address you copied in the previous step]` - do not include the brackets
-
-Now try to commit something and push it up to your new repo. If everything is setup correctly, you should see the changes on GitHub.
-
-## Setup
-
-After one person has gone through the steps of cloning down this repo and editing the remote, everyone should clone down the repo.
-
-Then install the library dependencies. Run:
-
-```bash
-npm install
-```
-
-To verify that it is setup correctly, run `npm start` in your terminal. Go to `http://localhost:8080/` and you should see a page with some `h1` text, Turing logo image and a beautiful gradient background. If that's the case, you're good to go. Enter `control + c` in your terminal to stop the server at any time.
-
-## Where to Add Your Code
-
-### JavaScript
-
-You have to be very intentional with where you add your feature code. This repo uses a tool called [webpack](https://webpack.js.org/) to combine many JavaScript files into one big file. Webpack enables you to have many, separate JavaScript files to keep your code organized and readable. Webpack expects all of your code files to be in a specific place, or else it doesn't know how to combine them all behind the scenes.
-
-**Create all of your feature code files in the `src` directory.**
-
-Since code is separated into multiple files, you need to use the `import` and `export` syntax to share code across file.
-
-Here is a video that walks through some information about [import and export](https://www.youtube.com/watch?v=_3oSWwapPKQ). There are a lot of resources out there about `import` and `export`, and resources will sometimes call them `ES6 modules`. It's something you will see in React and beyond.
-
-### HTML
-
-Add the HTML you need in the `index.html` file in the `./dist` directory. There is some boilerplate HTML that exists from the start that you can modify.
-
-### CSS (SCSS/SASS)
-
-This project is setup to use SCSS/Sass files by default instead of your regular CSS files. Add your SCSS files in the `src/css` directory. There is a `base.scss` file already there, but you can change this file and add multiple SCSS files in this directory.
-
-This might sound weird, but you need to `import` your SCSS files in the JavaScript entry file (`scripts.js`) for the styles to be applied to your HTML. The example `base.scss` file has already been imported in the JavaScript entry file as an example.
-
-### Images
-
-Add your image files in the `src/images` directory. Similar to CSS files, you need to `import` image files in the JavaScript entry file (`scripts.js`). Then go into the HTML and add an `img` element with the `src` attribute pointing to the `images` directory. There is an example in the `index.html` file for you to see.
-
-## How to View Your Code in Action
-
-In the terminal, run:
-
-```bash
-npm start
-```
-
-You will see a bunch of lines output to your terminal. One of those lines will be something like:
-
-```bash
-Project is running at http://localhost:8080/
-```
-
-Go to `http://localhost:8080/` in your browser to view your code running in the browser.
-
----
-
-## Test Files Organization
-
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
-
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `box-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
-npm test
-```
-
-The test results will output to the terminal.
-
----
-
-## Linting Your Code
-
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit - the linter is still running successfully.
-
-Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory.
-
-## Webpack?
-
-If you look in the `package.json` file, you'll see one of the library dependencies called `webpack`. If you're interested in learning more about what Webpack is and how it works behind the scenes, take a look through the [Webpack configuration documentation](https://webpack.js.org/concepts/).
-
-## Deploying to GitHub Pages
-
-_If you are finished with the functionality and testing of your project_, then you can consider deploying your project to the web! This way anyone can play it without cloning down your repo.
-
-[GitHub Pages](https://pages.github.com/) is a great way to deploy your project to the web. Don't worry about this until your project is free of bugs and well tested!
-
-If you _are_ done, you can follow [this procedure](./gh-pages-procedure.md) to get your project live on GitHub Pages.
