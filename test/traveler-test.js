@@ -74,11 +74,19 @@ describe('Traveler', () => {
     ).to.equal(10560)
   })
 
-  it('should have a method to get the total cost of all trips', () => {
+  it('should have a method to get the total cost of all trips by year', () => {
     traveler.getTravelerTripData(testTripData, testDestinationData)
     traveler.calculateAllTripTotal()
     expect(traveler.totalSpent).to.equal(139370)
   })
-})
 
-//login, tests, readme, refactor
+  it('should have a method to get a destination by id', () => {
+    expect(traveler.getDestinationById(1)).to.equal(testDestinationData[0])
+  })
+
+  it('should have a method to calulate a given trips cost', () => {
+    expect(
+      traveler.calculateTripCost(testTripData[0], testDestinationData[0])
+    ).to.equal(10560)
+  })
+})
