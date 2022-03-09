@@ -42,6 +42,13 @@ Request a new trip:
 
 - To create your own version of this project, follow the instructions on [this](https://github.com/turingschool-examples/webpack-starter-kit) repository
 
+## Learning Goals
+
+- Use OOP to drive the design of the application and the code
+- Work with an API to send and receive data
+- Solidify the code review process
+- Create a robust test suite that thoroughly tests all functionality of a client-side application
+
 ## Future Additions
 
 Future additions to this project may include two different types of users, a traveler or a travel agent.

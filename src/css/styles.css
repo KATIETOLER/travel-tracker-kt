@@ -28,7 +28,7 @@ label {
 }
 
 input {
-  font-size: 1em;
+  font-size: 2em;
 }
 
 body {
@@ -70,14 +70,15 @@ button {
   width: 8vw;
   font-size: medium;
   border-radius: 1vw;
-  background-color: rgb(246 12 246 / 80%);
   color: white;
   border: solid #3a11ff;
+  background-color: rgba(255, 141, 255, 0.8);
 }
 
 button:hover {
-  background-color: rgba(255, 141, 255, 0.8);
+  background-color: rgb(246 12 246 / 80%);
   transition: 200ms;
+  color: aqua;
 }
 
 p,
@@ -104,6 +105,7 @@ main {
   justify-content: space-around;
   align-items: center;
 }
+
 .welcome-nav {
   display: flex;
   width: 100%;
@@ -145,11 +147,11 @@ img {
 
 .cards {
   display: flex;
-  height: 30vw;
+  height: 48vw;
   width: 35vw;
   border: 2vw solid rgb(85, 0, 255);
   background-color: rgb(85, 0, 255);
-  box-shadow: 1px 1px 100px rgb(250, 254, 0), 1px 1px 100px rgb(232, 206, 8);
+  box-shadow: 1px 1px 100px rgb(250 254 0), 1px 1px 100px rgb(232 206 8);
   color: aliceblue;
   border-radius: 0.5vw;
   flex-direction: column;
@@ -184,6 +186,11 @@ img {
 .dashboard::-webkit-scrollbar-thumb {
   background-color: rgb(252, 252, 252);
   outline: 1px solid slategrey;
+}
+
+.dashboard:hover {
+  color: aqua;
+  transition: 200ms;
 }
 
 .total {
@@ -249,6 +256,7 @@ img {
 }
 
 .login-display {
+  height: 30vw;
   display: flex;
   flex-direction: column;
 }
