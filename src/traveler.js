@@ -48,7 +48,7 @@ class Traveler {
 
   calculateAllTripTotal() {
     const total = this.travelerTrips.reduce((acc, trip) => {
-      if (trip.date.includes('2022')) {
+      if (trip.date.includes('2022') && trip.status === 'approved') {
         acc += trip.total
       }
       return acc
