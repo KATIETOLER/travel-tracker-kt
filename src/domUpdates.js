@@ -58,6 +58,7 @@ const displayDashboard = (currentTraveler) => {
           <p>Total Cost : $${trip.total}</p><br>
           <p>Trip Status : ${trip.status}</p><br>
           <p>Number of travelers : ${trip.travelers}</p><br>
+          <img src="${trip.destination.image}" alt="${trip.destination.alt}" style="width:350px;height:auto;"</img>
         </div>`
     return acc
   }, '')
