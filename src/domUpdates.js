@@ -38,8 +38,6 @@ const showHide = (toShow, toHide) => {
   show(toShow)
 }
 
-/// dom updates object
-
 const displayDestinationOptions = (currentTraveler) => {
   destinationOptions.innerHTML = currentTraveler.destinationOptions.reduce(
     (acc, destination) => {
@@ -78,6 +76,7 @@ const displayTripSubmission = (message) => {
 const displayTotal = (currentTraveler) => {
   userTotal.innerHTML = `Total Spent on Trips this Year: $${currentTraveler.totalSpent}`
 }
+
 const displayNewTripForm = () => {
   showHide(
     [formWrapper, yourAccountButton],
