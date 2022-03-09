@@ -16,9 +16,9 @@ const fetchAllDestinationData = () => {
   )
 }
 
-const fetchOneTravelersData = () => {
-  return fetch('http://localhost:3001/api/v1/travelers/').then((response) =>
-    response.json()
+const fetchOneTravelersData = (id) => {
+  return fetch(`http://localhost:3001/api/v1/travelers/${id}`).then(
+    (response) => response.json()
   )
 }
 

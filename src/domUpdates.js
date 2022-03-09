@@ -12,6 +12,14 @@ const greeting = document.querySelector('.greeting')
 const modal = document.querySelector('.modal')
 const modalText = document.querySelector('.modal-content')
 const closeModal = document.querySelector('.close')
+const logoutButton = document.querySelector('.log-out-button')
+const loginDisplay = document.querySelector('.login-display')
+const estCostBtn = document.querySelector('.estimated-cost')
+const estCostDisplay = document.querySelector('.display-est-cost')
+
+const selectedDuration = document.querySelector('#duration')
+const selectedDestination = document.querySelector('#destination-dropdown')
+const selectedTravelerNumber = document.querySelector('#traveler-number')
 
 const hide = (toHide) => {
   toHide.forEach((element) => {
@@ -29,8 +37,6 @@ const showHide = (toShow, toHide) => {
   hide(toHide)
   show(toShow)
 }
-
-/// dom updates object
 
 const displayDestinationOptions = (currentTraveler) => {
   destinationOptions.innerHTML = currentTraveler.destinationOptions.reduce(
@@ -52,6 +58,7 @@ const displayDashboard = (currentTraveler) => {
           <p>Total Cost : $${trip.total}</p><br>
           <p>Trip Status : ${trip.status}</p><br>
           <p>Number of travelers : ${trip.travelers}</p><br>
+          <img src="${trip.destination.image}" alt="${trip.destination.alt}" style="width:350px;height:auto;"</img>
         </div>`
     return acc
   }, '')
@@ -59,22 +66,43 @@ const displayDashboard = (currentTraveler) => {
 }
 
 const displayWelcomeMessage = (currentTraveler) => {
-  greeting.innerHTML = `Welcome, ${currentTraveler.name}`
+  greeting.innerHTML = `Welcome, ${currentTraveler.name}!`
 }
 
 const displayTripSubmission = (message) => {
   show([status])
-  status.innerText = `${message}`
+  if (
+    selectedDestination.value !== '' &&
+    selectedDuration.value !== '' &&
+    selectedTravelerNumber !== ''
+  ) {
+    status.innerText = `${message}`
+  } else {
+    displayModal(`Please fill out all fields`)
+  }
 }
 
 const displayTotal = (currentTraveler) => {
-  userTotal.innerHTML = `Total Spent on trips: $${currentTraveler.totalSpent}`
+  userTotal.innerHTML = `Total Spent on Trips this Year: $${currentTraveler.totalSpent}`
 }
+
 const displayNewTripForm = () => {
-  showHide([formWrapper, yourAccountButton], [newTripButton, dashboard])
+  showHide(
+    [formWrapper, yourAccountButton],
+    [newTripButton, loginDisplay, dashboard]
+  )
 }
 const displayAccount = () => {
-  showHide([dashboard, newTripButton], [formWrapper, yourAccountButton])
+  showHide(
+    [dashboard, newTripButton, logoutButton],
+    [formWrapper, loginDisplay, yourAccountButton]
+  )
+}
+const logout = () => {
+  showHide(
+    [loginDisplay],
+    [dashboard, formWrapper, logoutButton, newTripButton, yourAccountButton]
+  )
 }
 
 const displayModal = (message) => {
@@ -88,18 +116,49 @@ window.onclick = function (event) {
   }
 }
 
+const displayEstimate = (event) => {
+  event.preventDefault()
+
+  const currentSelectedTrip = {
+    travelers: parseInt(selectedTravelerNumber.value),
+    duration: parseInt(selectedDuration.value),
+  }
+
+  const destinationData = currentTraveler.getDestinationById(
+    parseInt(selectedDestination.value)
+  )
+  if (
+    selectedDestination.value !== '' &&
+    selectedDuration.value !== '' &&
+    selectedTravelerNumber.value !== ''
+  ) {
+    estCostDisplay.innerHTML = `Estimated Cost: $ ${currentTraveler.calculateTripCost(
+      currentSelectedTrip,
+      destinationData
+    )}`
+  } else {
+    displayModal(`Please fill out all fields`)
+  }
+}
+
 closeModal.addEventListener('click', (event) => {
   hide([modal])
 })
 
-newTripButton.addEventListener('click', displayNewTripForm)
+estCostBtn.addEventListener('click', (event) => {
+  displayEstimate(event)
+})
 
+newTripButton.addEventListener('click', displayNewTripForm)
+logoutButton.addEventListener('click', logout)
 yourAccountButton.addEventListener('click', displayAccount)
 
 export {
+  displayEstimate,
   displayDashboard,
   displayTotal,
   displayDestinationOptions,
   displayTripSubmission,
   displayModal,
+  displayAccount,
 }

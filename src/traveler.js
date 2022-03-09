@@ -10,6 +10,7 @@ class Traveler {
     this.allDestinationsData = allDestinationsData
     this.travelerTrips = []
     this.totalSpent = 0
+    this.currentTripTotal = 0
     this.destinationOptions = []
   }
 
@@ -41,9 +42,15 @@ class Traveler {
     return fee + tripTotal
   }
 
+  getDestinationById(id) {
+    return this.allDestinationsData.find((destination) => destination.id === id)
+  }
+
   calculateAllTripTotal() {
     const total = this.travelerTrips.reduce((acc, trip) => {
-      acc += trip.total
+      if (trip.date.includes('2022') && trip.status === 'approved') {
+        acc += trip.total
+      }
       return acc
     }, 0)
     this.totalSpent = total

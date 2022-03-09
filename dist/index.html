@@ -7,45 +7,52 @@
   <title>Travel Tracker</title>
 </head>
 <body>
-
-
   <div id="modal" class="modal hidden">
     <div class="modal-content">
-      <span class="close" id="close">&times;</span>
+      <span class="close" id="close">X</span>
       <h2 id="modalText">Errors</h2>
     </div>
+  </div> 
+  <nav class="welcome-nav"> 
+    <div class="button-wrapper">
+    <button class="log-out-button hidden">Log Out</button>
+      <button class="new-trip hidden">New Trip</button>
+      <button class="your-account hidden">Dashboard</button>
   </div>
-
-
-
-  
-  <nav class="welcome-nav"> <button>Log In</button>
-    <button class="new-trip">New Trip</button>
-    <button class="your-account hidden">Your Account</button>
-    <div class="icon-wrapper"><img src="./images/luggage.png" alt="luggage"> </div> 
     <div class="title-wrapper">
       <div class="travel">Travel</div> <div class="tracker">Tracker
     </div></nav> 
     <main>
-      <div class="dashboard"> 
+      <div class="dashboard hidden"> 
         <h3 class="greeting">Welcome</h3>
         <div class="total"></div>
         <div class="trips"></div>
       </div>
-
+      <div class="login-display cards" id="loginDisplay">
+        <form class="login-form">
+          <label for="userNameInput"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="user-name" required id="userNameInput"><br>
+          <label for="passwordInput"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required id="passwordInput"><br>
+          <button type="submit" id="loginButton">Login</button>
+          <div class="icon-wrapper"><img src="./images/luggage.png" alt="luggage" class="icon"> </div> 
+        </form>
+      </div>
       <div class="form-wrapper hidden">
         <form class="cards">
           <h2>Create a New Trip</h2>
           <h3 class="submission-status hidden"></h3>
-          <label for="date-selector">Select A Date:</label>
+          <button class="estimated-cost">estimate cost</button>
+          <p class="display-est-cost"></p>
+          <label for="date-selector">Please Select A Date:</label>
           <input type="date" id="dateSelector" name="date-selector"  required>
-          <label for="duration">Duration in day of trip:</label>
+          <label for="duration">Duration in Days of Trip:</label>
           <input type="number" name="duration" id="duration" required> 
-          <label for="destination-dropdown">Choose a destination:</label>
+          <label for="destination-dropdown">Select a Destination:</label>
           <select name="destination-dropdown" id="destination-dropdown" required>
-          <option value="Spain">Spain</option>
+          <option value="Peru">Lima, Peru</option>
           </select>
-          <label for="traveler-number">Choose a number of travelers:</label>
+          <label for="traveler-number">Select Number of Travelers:</label>
           <input type="number" name="traveler-number" id="traveler-number" required> 
         <button id="submitButton">Submit</button>
         </form>
