@@ -4,6 +4,8 @@
 
 - Project Manager [Nik Seif](https://github.com/niksseif)
 
+- Code reviews graciously performed by [Nicole](https://github.com/nvalentini21)
+
 ## Overview
 
 This app is built using JavaScript, HTML, CSS, and utilizes Test Driven Development with Mocha and Chai.
@@ -33,9 +35,12 @@ Request a new trip:
 - The easiest way is to view the deployed site [here](https://katietoler.github.io/travel-tracker-kt/)
 
 - Or, you can `clone` [this](https://github.com/KATIETOLER/travel-tracker-kt) repository and the [api](https://github.com/turingschool-examples/travel-tracker-api)
+
   - follow the instructions on the api README
   - run `npm install` and `npm start` in both repositories
   - open the site at [http://localhost:8080](http://localhost:8080/?user-name=traveler1&psw=travel)
+
+- To create your own version of this project, follow the instructions on [this](https://github.com/turingschool-examples/webpack-starter-kit) repository
 
 ## Future Additions
 
@@ -60,3 +65,5 @@ Delete an upcoming trip for that user
 - Trunk Icon by [FreePik](https://www.flaticon.com/free-icons/travel)
 
 - Background Photo by [Erwan Hesry](https://unsplash.com/@erwanhesry?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText")
+
+- Project spec created by [Turing School of Software and Design](turing.edu)
