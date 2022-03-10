@@ -16,8 +16,8 @@ body {
   font-family: 'Biryani', sans-serif;
   background-color: rgb(202, 222, 255);
   height: 100%;
-  background-image: url(../images/sean-sinclair--unsplash.jpg);
-  background-color: rgb(121, 0, 196);
+  background-image: url();
+  background-color: rgb(203, 203, 203);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -45,7 +45,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: rgb(181, 0, 157);
+  background-color: rgb(75, 75, 75);
   outline: 1px solid slategrey;
 }
 
@@ -70,15 +70,16 @@ button {
   width: 8vw;
   font-size: medium;
   border-radius: 1vw;
-  color: white;
-  border: solid #3a11ff;
-  background-color: rgba(255, 141, 255, 0.8);
+  color: rgb(62, 62, 62);
+  border: solid rgb(202, 222, 255);
+  background-color: rgb(202, 222, 255);
 }
 
 button:hover {
-  background-color: rgb(246 12 246 / 80%);
+  background-color: rgb(116, 168, 252);
+  border-color: rgb(116, 168, 252);
   transition: 200ms;
-  color: aqua;
+  color: rgb(84, 84, 84);
 }
 
 p,
@@ -116,7 +117,7 @@ main {
   padding: 2vw;
   justify-content: space-between;
   box-shadow: 2px 6px 6px hsl(0deg 0% 0% / 0.1);
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(85, 85, 86);
 }
 
 img {
@@ -149,10 +150,10 @@ img {
   display: flex;
   height: 48vw;
   width: 35vw;
-  border: 2vw solid rgb(53, 0, 160);
-  background-color: rgb(48, 0, 145);
-  box-shadow: 1px 1px 100px rgb(250 254 0), 1px 1px 100px rgb(232 206 8);
-  color: aliceblue;
+  border: 2vw solid rgb(196, 196, 196);
+  background-color: rgb(196, 196, 196);
+  box-shadow: 1px 1px 5px rgb(29, 29, 29), 1px 1px 10px rgb(114, 114, 114);
+  color: rgb(39, 39, 39);
   border-radius: 0.5vw;
   flex-direction: column;
   justify-content: space-between;
@@ -165,12 +166,12 @@ img {
   height: 30vw;
   width: 50vw;
   color: aliceblue;
-  border: 2vw solid rgb(106, 0, 254);
+  border: 2vw solid rgb(196, 196, 196);
+  background-color: rgb(196, 196, 196);
   border-radius: 2vw;
-  background-color: rgb(106, 0, 254);
   padding: 2vw;
   overflow-y: scroll;
-  box-shadow: 1px 1px 100px rgb(250, 254, 0), 1px 1px 100px rgb(232, 206, 8);
+  box-shadow: 1px 1px 5px rgb(29, 29, 29), 1px 1px 10px rgb(114, 114, 114);
   flex-direction: column;
   align-items: center;
 }
@@ -189,7 +190,7 @@ img {
 }
 
 .dashboard:hover {
-  color: aqua;
+  color: rgb(21, 21, 21);
   transition: 200ms;
 }
 
@@ -200,7 +201,7 @@ img {
 }
 
 .greeting {
-  color: rgb(255 251 2);
+  color: rgb(33, 33, 33);
   text-shadow: 2px 6px 6px rgba(0, 0, 0, 0.1);
   font-size: 3vw;
 }
@@ -237,7 +238,7 @@ img {
 
 /* The Close Button */
 .close {
-  color: #e601db;
+  color: #000000;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -245,7 +246,7 @@ img {
 
 .status {
   font-style: italic;
-  color: yellow;
+  color: rgb(94, 94, 94);
 }
 
 .login-form {
