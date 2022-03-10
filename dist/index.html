@@ -24,9 +24,11 @@
     </div></nav> 
     <main>
       <div class="dashboard hidden"> 
-        <h3 class="greeting">Welcome</h3>
+       <div class="greeting-wrapper"> <h3 class="greeting">Welcome</h3>
+       </div>
         <div class="total"></div>
-        <div class="trips"></div>
+          <div class="user-trips">
+        </div>
       </div>
       <div class="login-display cards" id="loginDisplay">
         <form class="login-form">
@@ -35,12 +37,11 @@
           <label for="passwordInput"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" name="psw" required id="passwordInput"><br>
           <button type="submit" id="loginButton">Login</button>
-          <div class="icon-wrapper"><img src="./images/luggage.png" alt="luggage" class="icon"> </div> 
         </form>
       </div>
       <div class="form-wrapper hidden">
-        <form class="cards">
-          <h2>Create a New Trip</h2>
+        <form class="create-trip">
+          <h2>Select Your Next Adventure</h2>
           <h3 class="submission-status hidden"></h3>
           <button class="estimated-cost">estimate cost</button>
           <p class="display-est-cost"></p>

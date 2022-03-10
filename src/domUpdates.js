@@ -1,7 +1,7 @@
 //query selectors
 import { currentTraveler } from './scripts'
 const dashboard = document.querySelector('.dashboard')
-const userTrips = document.querySelector('.trips')
+const userTrips = document.querySelector('.user-trips')
 const userTotal = document.querySelector('.total')
 const destinationOptions = document.querySelector('#destination-dropdown')
 const status = document.querySelector('.submission-status')
