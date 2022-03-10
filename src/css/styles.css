@@ -16,8 +16,8 @@ body {
   font-family: 'Biryani', sans-serif;
   background-color: rgb(202, 222, 255);
   height: 100%;
-  background-image: url(../images/sean-sinclair--unsplash.jpg);
-  background-color: rgb(121, 0, 196);
+  background-image: url(../images/pacific-austin-NuxrBq5-Sd0-unsplash.jpg);
+  background-color: rgb(85, 85, 86);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -28,7 +28,7 @@ label {
 }
 
 input {
-  font-size: 1em;
+  font-size: 2em;
 }
 
 body {
@@ -45,8 +45,8 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: rgb(181, 0, 157);
-  outline: 1px solid slategrey;
+  background-color: rgb(255, 255, 255);
+  outline: 1px solid rgb(85, 85, 86);
 }
 
 img,
@@ -66,18 +66,39 @@ select {
 }
 
 button {
-  height: 5vw;
+  height: 3vw;
   width: 8vw;
   font-size: medium;
   border-radius: 1vw;
-  background-color: rgb(246 12 246 / 80%);
-  color: white;
-  border: solid #3a11ff;
+  color: rgb(62, 62, 62);
+  border: solid rgb(202, 222, 255);
+  background-color: rgb(202, 222, 255);
+  transition: 500ms;
+  cursor: pointer;
+}
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
-button:hover {
-  background-color: rgba(255, 141, 255, 0.8);
-  transition: 200ms;
+button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 25px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 p,
@@ -104,17 +125,18 @@ main {
   justify-content: space-around;
   align-items: center;
 }
+
 .welcome-nav {
   display: flex;
   width: 100%;
-  height: 10vw;
+  height: 5vw;
   flex-direction: row;
   font-size: 2vw;
   align-items: center;
   padding: 2vw;
   justify-content: space-between;
   box-shadow: 2px 6px 6px hsl(0deg 0% 0% / 0.1);
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(85, 85, 86);
 }
 
 img {
@@ -145,30 +167,30 @@ img {
 
 .cards {
   display: flex;
-  height: 30vw;
+  height: 48vw;
   width: 35vw;
-  border: 2vw solid rgb(85, 0, 255);
-  background-color: rgb(85, 0, 255);
-  box-shadow: 1px 1px 100px rgb(250, 254, 0), 1px 1px 100px rgb(232, 206, 8);
-  color: aliceblue;
+  border: 2vw solid rgb(254, 254, 254);
+  background-color: rgb(254, 254, 254);
+  box-shadow: 1px 1px 5px rgb(126, 126, 126), 1px 1px 10px rgb(181, 181, 181);
+  color: rgb(39, 39, 39);
   border-radius: 0.5vw;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 1vw;
 }
 
 .dashboard {
   display: flex;
-  height: 30vw;
-  width: 50vw;
-  color: aliceblue;
-  border: 2vw solid rgb(106, 0, 254);
+  height: 46vw;
+  width: 89vw;
+  color: rgb(77, 77, 77);
+  border: 2vw solid rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   border-radius: 2vw;
-  background-color: rgb(106, 0, 254);
   padding: 2vw;
   overflow-y: scroll;
-  box-shadow: 1px 1px 100px rgb(250, 254, 0), 1px 1px 100px rgb(232, 206, 8);
+  box-shadow: 1px 1px 5px rgb(91, 91, 91), 1px 1px 10px rgb(114, 114, 114);
   flex-direction: column;
   align-items: center;
 }
@@ -182,25 +204,46 @@ img {
 }
 
 .dashboard::-webkit-scrollbar-thumb {
-  background-color: rgb(252, 252, 252);
+  background-color: rgb(76, 128, 172);
   outline: 1px solid slategrey;
 }
 
-.total {
+.dashboard:hover {
+  color: rgb(21, 21, 21);
+  transition: 200ms;
+}
+
+.total,
+.display-est-cost {
   font-weight: bolder;
   font-style: italic;
+  color: rgb(76, 128, 172);
   padding: 2vw;
 }
 
+.display-est-cost {
+  padding: 0.5vw;
+}
+
+.estimated-cost {
+  width: 9vw;
+  transition: 500ms;
+}
+
+.estimated-cost:hover {
+  transition: 500ms;
+  font-weight: bolder;
+}
+
 .greeting {
-  color: rgb(255 251 2);
-  text-shadow: 2px 6px 6px rgba(0, 0, 0, 0.1);
+  color: rgb(70, 70, 70);
+  text-shadow: 2px 6px 6px rgba(144, 144, 144, 0.1);
   font-size: 3vw;
 }
 
 #submitButton {
   height: 4vw;
-  width: 6vw;
+  width: 7vw;
 }
 
 .modal {
@@ -230,7 +273,7 @@ img {
 
 /* The Close Button */
 .close {
-  color: #e601db;
+  color: #000000;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -238,19 +281,57 @@ img {
 
 .status {
   font-style: italic;
-  color: yellow;
+  color: rgb(94, 94, 94);
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .login-display {
+  height: 30vw;
+  width: 35vw;
+}
+
+.trips {
+  box-shadow: 1px 1px 5px rgb(126 126 126), 1px 1px 10px rgb(181 181 181);
+  padding: 1vw;
+  width: 25vw;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-style: italic;
+  background-color: aliceblue;
+}
+
+.trips:hover {
+  background-color: white;
+}
+
+.user-trips {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.create-trip {
+  display: flex;
+  height: 48vw;
+  width: 35vw;
+  border: 2vw solid rgb(254, 254, 254);
+  background-color: rgb(254, 254, 254);
+  box-shadow: 1px 1px 5px rgb(126, 126, 126), 1px 1px 10px rgb(181, 181, 181);
+  color: rgb(39, 39, 39);
+  border-radius: 0.5vw;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1vw;
 }
 
 .close:hover,

@@ -1,7 +1,7 @@
 //query selectors
 import { currentTraveler } from './scripts'
 const dashboard = document.querySelector('.dashboard')
-const userTrips = document.querySelector('.trips')
+const userTrips = document.querySelector('.user-trips')
 const userTotal = document.querySelector('.total')
 const destinationOptions = document.querySelector('#destination-dropdown')
 const status = document.querySelector('.submission-status')
@@ -20,6 +20,7 @@ const estCostDisplay = document.querySelector('.display-est-cost')
 const selectedDuration = document.querySelector('#duration')
 const selectedDestination = document.querySelector('#destination-dropdown')
 const selectedTravelerNumber = document.querySelector('#traveler-number')
+const selectedTravelerDate = document.querySelector('#dateSelector')
 
 const hide = (toHide) => {
   toHide.forEach((element) => {
@@ -74,9 +75,9 @@ const displayTripSubmission = (message) => {
   if (
     selectedDestination.value !== '' &&
     selectedDuration.value !== '' &&
-    selectedTravelerNumber !== ''
+    selectedTravelerNumber.value !== ''
   ) {
-    status.innerText = `${message}`
+    displayModal(message)
   } else {
     displayModal(`Please fill out all fields`)
   }
@@ -86,18 +87,29 @@ const displayTotal = (currentTraveler) => {
   userTotal.innerHTML = `Total Spent on Trips this Year: $${currentTraveler.totalSpent}`
 }
 
+const resetTripForm = () => {
+  selectedDestination.value = ''
+  selectedDuration.value = ''
+  selectedTravelerNumber.value = ''
+  estCostDisplay.innerText = ''
+  selectedTravelerDate.value = `mm/dd/yyyy`
+}
+
 const displayNewTripForm = () => {
+  resetTripForm()
   showHide(
     [formWrapper, yourAccountButton],
     [newTripButton, loginDisplay, dashboard]
   )
 }
+
 const displayAccount = () => {
   showHide(
     [dashboard, newTripButton, logoutButton],
     [formWrapper, loginDisplay, yourAccountButton]
   )
 }
+
 const logout = () => {
   showHide(
     [loginDisplay],
