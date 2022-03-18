@@ -57,7 +57,7 @@ const displayDashboard = (currentTraveler) => {
           <p>Destination: ${trip.destination.destination}</p><br>
           <p>Destination ID: ${trip.destination.id}</p><br>
           <p>Total Cost : $${trip.total}</p><br>
-          <p>Trip Status : ${trip.status}</p><br>
+          <p class="status">Trip Status : ${trip.status}</p><br>
           <p>Number of travelers : ${trip.travelers}</p><br>
           <img src="${trip.destination.image}" alt="${trip.destination.alt}" style="width:350px;height:auto;"</img>
         </div>`
@@ -67,6 +67,7 @@ const displayDashboard = (currentTraveler) => {
 }
 
 const displayWelcomeMessage = (currentTraveler) => {
+  show([greeting])
   greeting.innerHTML = `Welcome, ${currentTraveler.name}!`
 }
 
@@ -99,7 +100,7 @@ const displayNewTripForm = () => {
   resetTripForm()
   showHide(
     [formWrapper, yourAccountButton],
-    [newTripButton, loginDisplay, dashboard]
+    [newTripButton, loginDisplay, dashboard, greeting]
   )
 }
 
@@ -113,7 +114,14 @@ const displayAccount = () => {
 const logout = () => {
   showHide(
     [loginDisplay],
-    [dashboard, formWrapper, logoutButton, newTripButton, yourAccountButton]
+    [
+      dashboard,
+      formWrapper,
+      logoutButton,
+      newTripButton,
+      yourAccountButton,
+      greeting,
+    ]
   )
 }
 

@@ -23,26 +23,7 @@ Travel Tracker was created to manage and track different trips for users and a t
 
 Log in to see your personal dashboard:
 
-
-![Log in to see your personal dashboard](https://media1.giphy.com/media/BCHp7QrS9hszzQEEkI/giphy.gif)
-
-
-Scroll through all trips:
-
-
-![Scroll through all trips](https://media3.giphy.com/media/hNKKMmvKZiph4WEvXQ/giphy.gif)
-
-
-Estimate the cost of a trip:
-
-
-![Estimate the cost of a trip](https://media4.giphy.com/media/kF7BmLOD2rzWRsxfyC/giphy.gif)
-
-
-Request a new trip:
-
-
-![Request a new trip](https://media1.giphy.com/media/mmcL0gy4ydm4jmgWUf/giphy.gif)
+![Log in to see your personal dashboard](https://media2.giphy.com/media/KReimkW5rigIxepdXd/giphy.gif)
 
 ## How to view the site
 
@@ -85,6 +66,6 @@ Delete an upcoming trip for that user
 
 - Trunk Icon by [FreePik](https://www.flaticon.com/free-icons/travel)
 
-- Background Photo by [Erwan Hesry](https://unsplash.com/@erwanhesry?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText")
+- Background Photo by [Pacific Austin](https://unsplash.com/@_pacifist)
 
 - Project spec created by [Turing School of Software and Design](turing.edu)

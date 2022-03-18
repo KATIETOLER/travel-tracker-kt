@@ -18,9 +18,7 @@
     <button class="log-out-button hidden"><span>
       Log Out
     </span></button>
-      <button class="new-trip hidden"><span>
-        New Trip
-      </span></button>
+      <button class="new-trip hidden"><span>New Trip</span></button>
       <button class="your-account hidden"><span>
         Dashboard
       </span></button>
@@ -30,27 +28,30 @@
     </div></nav> 
     <main>
       <div class="dashboard hidden"> 
-       <div class="greeting-wrapper"> <h3 class="greeting">Welcome</h3>
-       </div>
-        <div class="total"></div>
-          <div class="user-trips">
-        </div>
+        
+        <div class="greeting-wrapper">
+          <h3 class="greeting">Welcome</h3>
+          <div class="total"></div>
       </div>
-      <div class="login-display cards" id="loginDisplay">
-        <form class="login-form">
-          <label for="userNameInput"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="user-name" required id="userNameInput"><br>
-          <label for="passwordInput"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required id="passwordInput"><br>
-          <button type="submit" id="loginButton"><span>Login</span></button>
-        </form>
+      <div class="user-trips"></div>
+      </div>
+      <div class="login-wrapper">
+        <div class="login-display cards" id="loginDisplay">
+          <form class="login-form">
+            <label for="userNameInput"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="user-name" required id="userNameInput"><br>
+            <label for="passwordInput"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required id="passwordInput"><br>
+            <button type="submit" id="loginButton"><span>Login</span></button>
+          </form>
+        </div>
       </div>
       <div class="form-wrapper hidden">
         <form class="create-trip">
           <h2>Select Your Next Adventure</h2>
           <h3 class="submission-status hidden"></h3>
-          <button class="estimated-cost">estimate cost
-          </button>
+          <button class="estimated-cost"><span>estimate cost
+          </span></button>
           <p class="display-est-cost"></p>
           <label for="date-selector">Please Select A Date:</label>
           <input type="date" id="dateSelector" name="date-selector"  required>

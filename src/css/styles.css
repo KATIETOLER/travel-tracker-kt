@@ -88,12 +88,12 @@ button span:after {
   position: absolute;
   opacity: 0;
   top: 0;
-  right: -20px;
+  right: -30px;
   transition: 0.5s;
 }
 
 button:hover span {
-  padding-right: 25px;
+  padding-right: 1em;
 }
 
 button:hover span:after {
@@ -120,16 +120,16 @@ main {
   display: flex;
   height: 100%;
   opacity: 100%;
-  padding-left: 5%;
-  flex-direction: row;
-  justify-content: space-around;
+  padding: 2vw;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .welcome-nav {
   display: flex;
   width: 100%;
-  height: 5vw;
+  height: 6vw;
   flex-direction: row;
   font-size: 2vw;
   align-items: center;
@@ -184,13 +184,6 @@ img {
   display: flex;
   height: 46vw;
   width: 89vw;
-  color: rgb(77, 77, 77);
-  border: 2vw solid rgb(255, 255, 255);
-  background-color: rgb(255, 255, 255);
-  border-radius: 2vw;
-  padding: 2vw;
-  overflow-y: scroll;
-  box-shadow: 1px 1px 5px rgb(91, 91, 91), 1px 1px 10px rgb(114, 114, 114);
   flex-direction: column;
   align-items: center;
 }
@@ -203,7 +196,7 @@ img {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-.dashboard::-webkit-scrollbar-thumb {
+.dashboard:-webkit-scrollbar-thumb {
   background-color: rgb(76, 128, 172);
   outline: 1px solid slategrey;
 }
@@ -217,10 +210,12 @@ img {
 .display-est-cost {
   font-weight: bolder;
   font-style: italic;
+  align-content: center;
   color: rgb(76, 128, 172);
-  padding: 2vw;
 }
-
+.total {
+  padding: 1vw;
+}
 .display-est-cost {
   padding: 0.5vw;
 }
@@ -235,10 +230,21 @@ img {
   font-weight: bolder;
 }
 
+.greeting-wrapper {
+  background-color: aliceblue;
+  box-shadow: 1px 1px 5px rgb(91 91 91), 1px 1px 10px rgb(114 114 114);
+  height: 7vw;
+  width: 77vw;
+  margin: 1vw;
+  display: flex;
+  justify-content: space-between;
+}
+
 .greeting {
   color: rgb(70, 70, 70);
-  text-shadow: 2px 6px 6px rgba(144, 144, 144, 0.1);
-  font-size: 3vw;
+  text-shadow: 2px 6px 6px rgb(144 144 144 / 10%);
+  font-size: 2vw;
+  padding: 2vw;
 }
 
 #submitButton {
@@ -279,11 +285,6 @@ img {
   font-weight: bold;
 }
 
-.status {
-  font-style: italic;
-  color: rgb(94, 94, 94);
-}
-
 .login-form {
   display: flex;
   flex-direction: column;
@@ -296,6 +297,10 @@ img {
   width: 35vw;
 }
 
+.login-wrapper {
+  padding-top: 10vw;
+}
+
 .trips {
   box-shadow: 1px 1px 5px rgb(126 126 126), 1px 1px 10px rgb(181 181 181);
   padding: 1vw;
@@ -306,6 +311,12 @@ img {
   align-items: center;
   font-style: italic;
   background-color: aliceblue;
+}
+
+.status {
+  font-style: italic;
+  font-weight: bolder;
+  color: rgb(6, 42, 113);
 }
 
 .trips:hover {
