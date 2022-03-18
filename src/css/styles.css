@@ -93,7 +93,7 @@ button span:after {
 }
 
 button:hover span {
-  padding-right: 1.5em;
+  padding-right: 1em;
 }
 
 button:hover span:after {
@@ -233,18 +233,18 @@ img {
 .greeting-wrapper {
   background-color: aliceblue;
   box-shadow: 1px 1px 5px rgb(91 91 91), 1px 1px 10px rgb(114 114 114);
-  height: 10vw;
+  height: 7vw;
+  width: 77vw;
+  margin: 1vw;
+  display: flex;
+  justify-content: space-between;
 }
 
 .greeting {
-  height: 7vw;
   color: rgb(70, 70, 70);
   text-shadow: 2px 6px 6px rgb(144 144 144 / 10%);
   font-size: 2vw;
   padding: 2vw;
-  padding-bottom: 0%;
-  padding-right: 51vw;
-  border-radius: 1vw;
 }
 
 #submitButton {
