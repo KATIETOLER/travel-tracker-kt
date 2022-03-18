@@ -88,12 +88,12 @@ button span:after {
   position: absolute;
   opacity: 0;
   top: 0;
-  right: -20px;
+  right: -30px;
   transition: 0.5s;
 }
 
 button:hover span {
-  padding-right: 25px;
+  padding-right: 1.5em;
 }
 
 button:hover span:after {
@@ -121,15 +121,15 @@ main {
   height: 100%;
   opacity: 100%;
   padding-left: 5%;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .welcome-nav {
   display: flex;
   width: 100%;
-  height: 5vw;
+  height: 6vw;
   flex-direction: row;
   font-size: 2vw;
   align-items: center;
@@ -184,13 +184,13 @@ img {
   display: flex;
   height: 46vw;
   width: 89vw;
-  color: rgb(77, 77, 77);
+  /* color: rgb(77, 77, 77);
   border: 2vw solid rgb(255, 255, 255);
   background-color: rgb(255, 255, 255);
-  border-radius: 2vw;
+  border-radius: 1vw;
   padding: 2vw;
   overflow-y: scroll;
-  box-shadow: 1px 1px 5px rgb(91, 91, 91), 1px 1px 10px rgb(114, 114, 114);
+  box-shadow: 1px 1px 5px rgb(91, 91, 91), 1px 1px 10px rgb(114, 114, 114); */
   flex-direction: column;
   align-items: center;
 }
@@ -217,6 +217,7 @@ img {
 .display-est-cost {
   font-weight: bolder;
   font-style: italic;
+  align-content: center;
   color: rgb(76, 128, 172);
   padding: 2vw;
 }
@@ -235,10 +236,20 @@ img {
   font-weight: bolder;
 }
 
+.greeting-wrapper {
+  background-color: aliceblue;
+  box-shadow: 1px 1px 5px rgb(91 91 91), 1px 1px 10px rgb(114 114 114);
+  height: 11vw;
+}
+
 .greeting {
+  height: 7vw;
   color: rgb(70, 70, 70);
-  text-shadow: 2px 6px 6px rgba(144, 144, 144, 0.1);
-  font-size: 3vw;
+  text-shadow: 2px 6px 6px rgb(144 144 144 / 10%);
+  font-size: 2vw;
+  padding: 2vw;
+  padding-right: 51vw;
+  border-radius: 1vw;
 }
 
 #submitButton {
@@ -279,11 +290,6 @@ img {
   font-weight: bold;
 }
 
-.status {
-  font-style: italic;
-  color: rgb(94, 94, 94);
-}
-
 .login-form {
   display: flex;
   flex-direction: column;
@@ -306,6 +312,12 @@ img {
   align-items: center;
   font-style: italic;
   background-color: aliceblue;
+}
+
+.status {
+  font-style: italic;
+  font-weight: bolder;
+  color: rgb(6, 42, 113);
 }
 
 .trips:hover {
